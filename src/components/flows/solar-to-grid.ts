@@ -18,7 +18,7 @@ const solarToGridDot = (config: PowerFlowCardPlusConfig, solar: Flows["solar"], 
 };
 
 export const flowSolarToGrid = (config: PowerFlowCardPlusConfig, { battery, grid, individual, solar, newDur }: Flows) => {
-  const shouldShow = grid.hasReturnToGrid && solar.has && showLine(config, solar.state.toGrid || 0);
+  const shouldShow = !(config as any).disable_solar_to_grid && grid.hasReturnToGrid && solar.has && showLine(config, solar.state.toGrid || 0);
   if (!shouldShow) return nothing;
 
   return html`<div
