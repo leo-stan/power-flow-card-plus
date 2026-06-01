@@ -89,9 +89,23 @@ export const styles = css`
     position: relative;
     text-decoration: none;
     color: var(--primary-text-color);
-    gap: 2px;
+    gap: 1px;
     // background-color: var(--card-background-color); /* hide overflowing lines behind background */
     overflow: hidden;
+  }
+  .circle .battery-time-remaining {
+    font-size: 9px;
+    line-height: 9px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    white-space: nowrap;
+  }
+  .circle .battery-time-remaining ha-icon.small {
+    --mdc-icon-size: 9px;
+    width: 9px;
+    height: 9px;
   }
 
   .circle > ha-ripple {
@@ -560,6 +574,7 @@ export const styles = css`
 
   #battery-state-of-charge-text {
     color: var(--text-battery-state-of-charge-color);
+    font-size: 11px;
   }
 
   @keyframes rotate-in {
