@@ -203,6 +203,17 @@ export const batteryElement = (
             })}</span
           >`
         : nothing}
+      ${(entities.battery as any)?.time_remaining_entity && main.hass.states[(entities.battery as any).time_remaining_entity]
+        ? html`<span class="battery-time-remaining" id="battery-time-remaining">
+            <ha-icon class="small" .icon=${"mdi:timer-sand"}></ha-icon>
+            ${(() => {
+              const s = Number(main.hass.states[(entities.battery as any).time_remaining_entity]?.state) || 0;
+              const d = Math.floor(s / 86400);
+              const h = Math.floor((s % 86400) / 3600);
+              return d > 0 ? `${d}d ${h}h` : `${h}h`;
+            })()}
+          </span>`
+        : nothing}
     </div>
     <span class="label">${battery.name}</span>
   </div>`;
