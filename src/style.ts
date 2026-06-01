@@ -75,8 +75,8 @@ export const styles = css`
 
   .circle {
     width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    height: 92px;
+    border-radius: 18px;
     box-sizing: border-box;
     border: 2px solid;
     display: flex;
@@ -111,7 +111,7 @@ export const styles = css`
   .circle > ha-ripple {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
+    border-radius: 18px;
     pointer-events: none;
     z-index: 0;
   }
